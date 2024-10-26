@@ -1,0 +1,27 @@
+{
+  "workspaceFolder": "/workspace",
+  "name": "MySQL Dev Container",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "mysql",
+  "forwardPorts": [
+    3306
+  ],
+  "remoteUser": "root",
+  "containerEnv": {
+    "MYSQL_ROOT_PASSWORD": "${MYSQL_ROOT_PASSWORD}",
+    "MYSQL_DATABASE": "${MYSQL_DATABASE}",
+    "MYSQL_USER": "${MYSQL_USER}",
+    "MYSQL_PASSWORD": "${MYSQL_PASSWORD}"
+  },
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "postCreateCommand": "/bin/sh /workspace/setup_mysql.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}
