@@ -1,4 +1,4 @@
-# MySQL Dev Container
+# mirelplatform 用 MySQL Dev Container
 
 ## 説明
 
